@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de message - La Maison de la Fiscalité</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables et styles généraux */
+        :root {
+            --primary-red: #C8102E;
+            --primary-red-dark: #A80D26;
+            --primary-white: #FFFFFF;
+            --secondary-dark: #333333;
+            --light-gray: #F5F5F7;
+            --medium-gray: #E5E5E5;
+            --text-dark: #222222;
+            --success-green: #28a745;
+            --success-light: #f0f9f0;
+            --border-color: #e0e0e0;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background-color: var(--light-gray);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--secondary-dark);
+            margin-bottom: 1.2rem;
+        }
+        
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--primary-red);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            color: #555;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary-white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-red {
+            color: var(--primary-red);
+        }
+        
+        .logo-dark {
+            color: var(--secondary-dark);
+        }
+        
+        /* Boutons dans la navbar */
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .nav-btn-red {
+            background-color: var(--primary-red);
+            color: var(--primary-white);
+        }
+        
+        .nav-btn-red:hover {
+            background-color: var(--primary-red-dark);
+        }
+        
+        .nav-btn-outline {
+            background-color: transparent;
+            color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+        }
+        
+        .nav-btn-outline:hover {
+            background-color: rgba(200, 16, 46, 0.05);
+        }
+        
+        .nav-btn i {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 60px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        main .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .thank-you-container {
+            background-color: var(--primary-white);
+            border-radius: 12px;
+            padding: 60px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            max-width: 820px;
+            width: 100%;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+        
+        .thank-you-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--primary-red);
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 35px;
+            color: var(--primary-white);
+            font-size: 2.2rem;
+        }
+        
+        .thank-you-container h1 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .thank-you-container h1:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+        
+        .thank-you-container p {
+            font-size: 1.15rem;
+            color: #666;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        .highlight-box {
+            background-color: var(--success-light);
+            border: 1px solid #d1e7dd;
+            padding: 25px;
+            margin: 35px 0;
+            text-align: left;
+            border-radius: 8px;
+        }
+        
+        .highlight-box h3 {
+            color: var(--success-green);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .highlight-box h3 i {
+            margin-right: 10px;
+        }
+        
+        .next-steps {
+            text-align: left;
+            margin: 40px 0;
+        }
+        
+        .next-steps h3 {
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            color: var(--secondary-dark);
+        }
+        
+        .steps-list {
+            list-style: none;
+        }
+        
+        .steps-list li {
+            margin-bottom: 25px;
+            padding-left: 35px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 25px;
+        }
+        
+        .steps-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .steps-list li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 26px;
+            height: 26px;
+            background-color: var(--primary-red);
+            color: var(--primary-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.85rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .steps-list li:nth-child(1):before { content: '1'; }
+        .steps-list li:nth-child(2):before { content: '2'; }
+        .steps-list li:nth-child(3):before { content: '3'; }
+        
+        /* Informations de contact */
+        .contact-info-thankyou {
+            background-color: var(--light-gray);
+            padding: 28px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: left;
+            border-left: 4px solid var(--primary-red);
+        }
+        
+        .contact-info-thankyou h3 {
+            margin-bottom: 20px;
+            color: var(--secondary-dark);
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info-thankyou h3 i {
+            margin-right: 10px;
+            color: var(--primary-red);
+        }
+        
+        .contact-details-thankyou p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+        
+        .contact-details-thankyou i {
+            color: var(--primary-red);
+            margin-right: 15px;
+            width: 20px;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-dark);
+            color: var(--primary-white);
+            padding: 50px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: block;
+            letter-spacing: -0.5px;
+        }
+        
+        .footer-logo-red {
+            color: var(--primary-red);
+        }
+        
+        .footer-logo-white {
+            color: var(--primary-white);
+        }
+        
+        .footer-about p {
+            color: #aaa;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-red);
+        }
+        
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-bottom a:hover {
+            color: var(--primary-white);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.1rem;
+            }
+            
+            .thank-you-container {
+                padding: 50px 40px;
+            }
+            
+            .nav-buttons {
+                gap: 10px;
+            }
+            
+            .nav-btn {
+                padding: 9px 18px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                padding: 50px 0;
+            }
+            
+            h1 {
+                font-size: 1.9rem;
+            }
+            
+            .thank-you-container {
+                padding: 40px 30px;
+            }
+            
+            .success-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.9rem;
+                margin-bottom: 30px;
+            }
+            
+            .thank-you-container p {
+                font-size: 1.1rem;
+            }
+            
+            .highlight-box {
+                padding: 22px;
+            }
+            
+            .steps-list li {
+                padding-left: 32px;
+            }
+            
+            .contact-info-thankyou {
+                padding: 24px;
+            }
+            
+            /* Adaptation des boutons navbar en mobile */
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .nav-buttons {
+                width: 100%;
+                justify-content: flex-start;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .thank-you-container {
+                padding: 35px 25px;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .success-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 1.7rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            /* Boutons navbar en version mobile */
+            .nav-buttons {
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 10px 20px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .nav-btn {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+            
+            .nav-btn i {
+                margin-right: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header avec boutons -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-red">La Maison</span>
+                <span class="logo-dark">de la Fiscalité</span>
+            </a>
+            
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-btn nav-btn-red">
+                    <i class="fas fa-home"></i> Accueil
+                </a>
+                <a href="index.html#services" class="nav-btn nav-btn-outline">
+                    <i class="fas fa-chart-line"></i> Services
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="thank-you-container">
+                <div class="success-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                
+                <h1>Confirmation de réception</h1>
+                
+                <p>Nous avons bien reçu votre message et vous en remercions. L'équipe de <strong>La Maison de la Fiscalité</strong> va traiter votre demande avec la plus grande attention.</p>
+                
+                <div class="highlight-box">
+                    <h3><i class="fas fa-clock"></i> Délai de réponse</h3>
+                    <p>Nous nous engageons à vous répondre dans un délai de <strong>24 à 48 heures</strong> ouvrées. Notre équipe d'experts fiscaux étudiera votre situation avec précision.</p>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>Procédure de traitement</h3>
+                    <ul class="steps-list">
+                        <li>
+                            <strong>Analyse approfondie</strong><br>
+                            Notre expert fiscal étudiera votre situation et vos besoins spécifiques avec rigueur.
+                        </li>
+                        <li>
+                            <strong>Contact personnalisé</strong><br>
+                            Nous vous contacterons par téléphone ou email pour échanger sur votre dossier.
+                        </li>
+                        <li>
+                            <strong>Proposition sur mesure</strong><br>
+                            Vous recevrez une analyse détaillée accompagnée de recommandations adaptées.
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="contact-info-thankyou">
+                    <h3><i class="fas fa-info-circle"></i> Contact & informations</h3>
+                    <div class="contact-details-thankyou">
+                        <p><i class="fas fa-phone"></i> <strong>Téléphone :</strong> 01 45 67 89 10</p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email :</strong> contact@maison-fiscalite.fr</p>
+                        <p><i class="fas fa-clock"></i> <strong>Horaires :</strong> Lundi-Vendredi 9h-19h</p>
+                        <p><i class="fas fa-exclamation-circle"></i> Pour toute urgence, contactez-nous directement par téléphone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <span class="footer-logo-red">La Maison</span>
+                        <span class="footer-logo-white">de la Fiscalité</span>
+                    </a>
+                    <p>Votre partenaire de confiance pour tous vos besoins en fiscalité. Expertise, précision et accompagnement personnalisé depuis 2005.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 La Maison de la Fiscalité. Tous droits réservés. | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Message de confirmation discret dans la console
+            console.log('Confirmation de message - La Maison de la Fiscalité');
+            
+            // Animation simple au clic sur les boutons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    this.style.opacity = '0.9';
+                    setTimeout(() => {
+                        this.style.opacity = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
