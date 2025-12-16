@@ -1,36 +1,174 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: https://ogp.me/ns#">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Maison de la Fiscalité - Votre partenaire de confiance</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- SEO Meta Tags -->
+    <title>La Maison de la Fiscalité - Expert Comptable & Conseiller Fiscal au Bénin</title>
+    <meta name="description"
+        content="Cabinet d'expertise fiscale au Bénin : déclarations, optimisation, audit fiscal, accompagnement juridique. Plus de 6 ans d'expérience pour entreprises et particuliers.">
+    <meta name="keywords"
+        content="expert fiscal Bénin, conseil fiscal Cotonou, déclaration fiscale, optimisation fiscale, audit fiscal, transmission entreprise, fiscaliste, comptable, CGI, code général des impôts">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.maison-fiscalite.bj/">
+    <meta property="og:title" content="La Maison de la Fiscalité - Expert Comptable & Conseiller Fiscal au Bénin">
+    <meta property="og:description"
+        content="Cabinet d'expertise fiscale au Bénin : déclarations, optimisation, audit fiscal, accompagnement juridique.">
+    <meta property="og:image" content="https://www.maison-fiscalite.bj/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.maison-fiscalite.bj/">
+    <meta property="twitter:title" content="La Maison de la Fiscalité - Expert Comptable & Conseiller Fiscal au Bénin">
+    <meta property="twitter:description"
+        content="Cabinet d'expertise fiscale au Bénin : déclarations, optimisation, audit fiscal, accompagnement juridique.">
+    <meta property="twitter:image" content="https://www.maison-fiscalite.bj/images/twitter-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.maison-fiscalite.bj/">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "La Maison de la Fiscalité",
+        "image": "https://www.maison-fiscalite.bj/images/logo.jpg",
+        "@id": "https://www.maison-fiscalite.bj/",
+        "url": "https://www.maison-fiscalite.bj/",
+        "telephone": "+229-01-96-45-74-86",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Cococodji",
+            "addressLocality": "Cotonou",
+            "addressCountry": "BJ"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 6.3546,
+            "longitude": 2.4403
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "19:00"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/maison-fiscalite",
+            "https://twitter.com/maison_fiscalite"
+        ]
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Animation pour mettre en évidence un élément */
+        .highlight-animation {
+            animation: highlightPulse 2s ease;
+        }
+
+        @keyframes highlightPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(216, 27, 96, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(216, 27, 96, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(216, 27, 96, 0);
+            }
+        }
+
+        .highlight-border {
+            animation: highlightBorder 2s ease;
+        }
+
+        @keyframes highlightBorder {
+            0% {
+                border-color: var(--rose-principal);
+                transform: scale(1.02);
+            }
+
+            100% {
+                border-color: var(--gris-clair);
+                transform: scale(1);
+            }
+        }
+
+        /* Styles pour la section documents */
+        .document-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .document-card.highlighted {
+            animation: highlightCard 2s ease;
+        }
+
+        @keyframes highlightCard {
+            0% {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 30px rgba(216, 27, 96, 0.3);
+                border-color: var(--rose-principal);
+            }
+
+            100% {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 25px rgba(216, 27, 96, 0.1);
+                border-color: var(--rose-clair);
+            }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Header - Optimisé pour une ligne -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">
+            <a href="/" class="logo" aria-label="La Maison de la Fiscalité - Accueil">
                 <span class="logo-red">La Maison</span>
                 <span class="logo-dark">de la Fiscalité</span>
             </a>
 
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
 
-            <nav>
+            <nav aria-label="Navigation principale">
                 <ul id="mainMenu">
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle">
+                            Législation fiscale <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#cgi-section" class="dropdown-item" data-target="cgi">Code Général des
+                                    Impôts</a></li>
+                            <li><a href="#textes-section" class="dropdown-item" data-target="textes">Textes Fiscaux</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li><a href="#apropos">À propos</a></li>
                     <li><a href="#valeurs">Valeurs</a></li>
                     <li><a href="#temoignages">Témoignages</a></li>
@@ -41,12 +179,11 @@
         </div>
     </header>
 
-    <!-- Hero Section - Sans statistiques -->
+    <!-- Hero Section -->
     <section class="hero" id="accueil">
         <div class="hero-bg"></div>
         <div class="container hero-content">
-            <!-- H1 SANS ANIMATION -->
-            <h1>Votre partenaire de confiance en fiscalité</h1>
+            <h1>Votre partenaire de confiance en fiscalité au Bénin</h1>
             <p>Conseil, optimisation et accompagnement fiscal pour entreprises et particuliers. Expertise certifiée,
                 confidentialité absolue et solutions sur mesure.</p>
             <div class="hero-buttons">
@@ -59,66 +196,116 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Nos services</h2>
+            <h2 class="section-title">Nos services de conseil fiscal</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" itemscope itemtype="https://schema.org/Service">
                     <div class="service-icon">
-                        <i class="fas fa-file-invoice-dollar fa-2x"></i>
+                        <i class="fas fa-file-invoice-dollar fa-2x" aria-hidden="true"></i>
                     </div>
-                    <h3>Déclarations fiscales</h3>
-                    <p>Préparation et dépôt de toutes vos déclarations fiscales avec précision et dans les délais
-                        légaux.</p>
+                    <h3 itemprop="name">Déclarations fiscales</h3>
+                    <p itemprop="description">Préparation et dépôt de toutes vos déclarations fiscales avec précision et
+                        dans les délais légaux.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" itemscope itemtype="https://schema.org/Service">
                     <div class="service-icon">
-                        <i class="fas fa-chart-line fa-2x"></i>
+                        <i class="fas fa-chart-line fa-2x" aria-hidden="true"></i>
                     </div>
-                    <h3>Optimisation fiscale</h3>
-                    <p>Stratégies personnalisées pour optimiser votre fiscalité et maximiser vos économies d'impôts.</p>
+                    <h3 itemprop="name">Optimisation fiscale</h3>
+                    <p itemprop="description">Stratégies personnalisées pour optimiser votre fiscalité et maximiser vos
+                        économies d'impôts.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" itemscope itemtype="https://schema.org/Service">
                     <div class="service-icon">
-                        <i class="fas fa-search-dollar fa-2x"></i>
+                        <i class="fas fa-search-dollar fa-2x" aria-hidden="true"></i>
                     </div>
-                    <h3>Audit fiscal</h3>
-                    <p>Analyse approfondie de votre situation fiscale pour identifier les risques et opportunités.</p>
+                    <h3 itemprop="name">Audit fiscal</h3>
+                    <p itemprop="description">Analyse approfondie de votre situation fiscale pour identifier les risques
+                        et opportunités.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" itemscope itemtype="https://schema.org/Service">
                     <div class="service-icon">
-                        <i class="fas fa-balance-scale fa-2x"></i>
+                        <i class="fas fa-balance-scale fa-2x" aria-hidden="true"></i>
                     </div>
-                    <h3>Accompagnement juridique et fiscal</h3>
-                    <p>Conseil et représentation dans vos démarches administratives et contentieux fiscaux.</p>
+                    <h3 itemprop="name">Accompagnement juridique et fiscal</h3>
+                    <p itemprop="description">Conseil et représentation dans vos démarches administratives et
+                        contentieux fiscaux.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" itemscope itemtype="https://schema.org/Service">
                     <div class="service-icon">
-                        <i class="fas fa-briefcase fa-2x"></i>
+                        <i class="fas fa-briefcase fa-2x" aria-hidden="true"></i>
                     </div>
-                    <h3>Conseils aux entreprises</h3>
-                    <p>Accompagnement personnalisé pour les entrepreneurs sur tous les aspects fiscaux de leur activité.
-                    </p>
+                    <h3 itemprop="name">Conseils aux entreprises</h3>
+                    <p itemprop="description">Accompagnement personnalisé pour les entrepreneurs sur tous les aspects
+                        fiscaux de leur activité.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" itemscope itemtype="https://schema.org/Service">
                     <div class="service-icon">
-                        <i class="fas fa-handshake fa-2x"></i>
+                        <i class="fas fa-handshake fa-2x" aria-hidden="true"></i>
                     </div>
-                    <h3>Transmission d'entreprise</h3>
-                    <p>Accompagnement complet pour la transmission ou cession de votre entreprise dans les meilleures
-                        conditions.</p>
+                    <h3 itemprop="name">Transmission d'entreprise</h3>
+                    <p itemprop="description">Accompagnement complet pour la transmission ou cession de votre entreprise
+                        dans les meilleures conditions.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Section Textes Fiscaux -->
+    <section class="documents-fiscaux" id="textes-fiscaux">
+        <div class="container">
+            <h2 class="section-title">Textes Fiscaux & Documentation Légale</h2>
+            <p class="section-subtitle">Accédez aux principaux documents légaux et textes fiscaux en vigueur au Bénin
+            </p>
+
+            <div class="documents-grid">
+                <!-- Code Général des Impôts -->
+                <div class="document-card" id="cgi-section" data-category="cgi">
+                    <div class="document-icon">
+                        <i class="fas fa-book fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <h3>Code Général des Impôts (CGI)</h3>
+                    <p>Version mise à jour du Code Général des Impôts du Bénin contenant l'ensemble des dispositions
+                        fiscales applicables.</p>
+                    <a href="assets/documents/Bénin-Code Général des Impôts 2025.pdf" class="btn-download"
+                        download="CGI-Benin-2024.pdf" aria-label="Télécharger le Code Général des Impôts (PDF)">
+                        <i class="fas fa-download" aria-hidden="true"></i> Télécharger le PDF
+                    </a>
+                    <p class="document-meta"><small>PDF - 2.5 MB - Dernière mise à jour : Janvier 2024</small></p>
+                </div>
+
+                <!-- Textes Réglementaires -->
+                <div class="document-card" id="textes-section" data-category="textes">
+                    <div class="document-icon">
+                        <i class="fas fa-gavel fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <h3>Textes Réglementaires Fiscaux</h3>
+                    <p>Recueil des décrets, arrêtés et circulaires d'application des dispositions fiscales.</p>
+                    <a href="assets/documents/LIVRE FISCAL MIS A JOUR LF 2025.pdf" class="btn-download"
+                        download="Textes-Reglementaires-Fiscaux.pdf"
+                        aria-label="Télécharger les Textes Réglementaires Fiscaux (PDF)">
+                        <i class="fas fa-download" aria-hidden="true"></i> Télécharger le PDF
+                    </a>
+                    <p class="document-meta"><small>PDF - 3.2 MB</small></p>
+                </div>
+            </div>
+
+            <!-- <div class="documents-info">
+                <h3>Information importante</h3>
+                <p>Ces documents sont fournis à titre informatif. Pour une interprétation juridique précise et des conseils adaptés à votre situation, consultez nos experts fiscaux.</p>
+                <a href="#contact" class="btn btn-red">Besoin d'une interprétation ? Contactez-nous</a>
+            </div> -->
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="apropos">
         <div class="container">
-            <h2 class="section-title">À propos</h2>
+            <h2 class="section-title">À propos de notre cabinet fiscal</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>Fondée en 2023, <strong>La Maison de la Fiscalité</strong> s'est imposée comme un acteur majeur
@@ -132,21 +319,23 @@
                         également une relation de confiance durable.</p>
                 </div>
 
-                <div class="ceo-profile">
+                <div class="ceo-profile" itemscope itemtype="https://schema.org/Person">
                     <div class="ceo-photo-placeholder">
                         <div class="ceo-photo"
                             style="background: linear-gradient(45deg, #2C2C2C, #444); display: flex; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px;">
                             <div>
-                                <i class="fas fa-user-tie fa-5x" style="margin-bottom: 20px;"></i>
-                                <p style="font-size: 1.3rem;">Justin MADINDE<br><span
-                                        style="font-size: 1rem; opacity: 0.9;">PDG & Fondateur</span></p>
+                                <i class="fas fa-user-tie fa-5x" style="margin-bottom: 20px;" aria-hidden="true"></i>
+                                <p style="font-size: 1.3rem;"><span itemprop="name">Justin MADINDE</span><br><span
+                                        style="font-size: 1rem; opacity: 0.9;"><span itemprop="jobTitle">Gérant &
+                                            Associé</span></span></p>
                             </div>
                         </div>
                     </div>
-                    <h3>M. Justin MADINDE</h3>
-                    <p class="ceo-title">Président-Directeur Général</p>
-                    <p>Expert-comptable et fiscaliste avec plus de 6 ans d'expérience, M. Justin MADINDE a fondé La Maison
-                        de la Fiscalité avec la volonté d'apporter un service d'excellence en conseil fiscal.</p>
+                    <h3 itemprop="name">M. Justin MADINDE</h3>
+                    <p class="ceo-title">Gérant & Associé</p>
+                    <p><span itemprop="description">Expert-comptable et fiscaliste avec plus de plusieurs ans
+                            d'expérience, M. Justin MADINDE a fondé La Maison de la Fiscalité avec la volonté d'apporter
+                            un service d'excellence en conseil fiscal.</span></p>
                 </div>
             </div>
         </div>
@@ -159,7 +348,7 @@
             <div class="valeurs-grid">
                 <div class="valeur-card">
                     <div class="valeur-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     </div>
                     <h3>Confidentialité</h3>
                     <p>Vos données sont protégées avec la plus grande rigueur. Nous respectons une éthique stricte de
@@ -168,7 +357,7 @@
 
                 <div class="valeur-card">
                     <div class="valeur-icon">
-                        <i class="fas fa-bullseye"></i>
+                        <i class="fas fa-bullseye" aria-hidden="true"></i>
                     </div>
                     <h3>Précision</h3>
                     <p>Chaque dossier est traité avec une exactitude méticuleuse. Notre rigueur garantit l'optimisation
@@ -177,7 +366,7 @@
 
                 <div class="valeur-card">
                     <div class="valeur-icon">
-                        <i class="fas fa-handshake"></i>
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
                     </div>
                     <h3>Confiance</h3>
                     <p>Nous construisons des relations durables basées sur la transparence et la fiabilité. Votre
@@ -186,7 +375,7 @@
 
                 <div class="valeur-card">
                     <div class="valeur-icon">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-lightbulb" aria-hidden="true"></i>
                     </div>
                     <h3>Innovation</h3>
                     <p>Nous restons à la pointe des évolutions législatives pour vous proposer des solutions fiscales
@@ -195,7 +384,7 @@
 
                 <div class="valeur-card">
                     <div class="valeur-icon">
-                        <i class="fas fa-user-tie"></i>
+                        <i class="fas fa-user-tie" aria-hidden="true"></i>
                     </div>
                     <h3>Expertise</h3>
                     <p>Nos consultants sont des spécialistes certifiés, formés continuellement pour maîtriser les
@@ -204,7 +393,7 @@
 
                 <div class="valeur-card">
                     <div class="valeur-icon">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock" aria-hidden="true"></i>
                     </div>
                     <h3>Réactivité</h3>
                     <p>Nous répondons à vos interrogations dans les meilleurs délais et nous adaptons rapidement aux
@@ -219,83 +408,92 @@
         <div class="container">
             <h2 class="section-title">Ce que disent nos clients</h2>
             <div class="testimonial-slider">
-                <div class="testimonial-slide active" id="slide1">
+                <div class="testimonial-slide active" id="slide1" itemscope itemtype="https://schema.org/Review">
                     <div class="testimonial-header">
                         <div class="testimonial-avatar">ML</div>
                         <div class="testimonial-info">
-                            <h4>Marc ABOISSO</h4>
+                            <h4 itemprop="author">Marc ABOISSO</h4>
                             <div class="testimonial-company">Directeur Général, Groupe EcoMoney</div>
                         </div>
                     </div>
-                    <div class="testimonial-quote">
+                    <div class="testimonial-quote" itemprop="reviewBody">
                         La Maison de la Fiscalité a transformé notre approche de la fiscalité. Leur expertise nous a
                         permis non seulement d'optimiser notre situation fiscale de 30%, mais aussi de structurer notre
                         croissance internationale de manière pérenne. Un partenariat exceptionnel.
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-rating" itemprop="reviewRating" itemscope
+                        itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <span class="sr-only">Note : 5 étoiles sur 5</span>
                     </div>
                 </div>
 
-                <div class="testimonial-slide" id="slide2">
+                <div class="testimonial-slide" id="slide2" itemscope itemtype="https://schema.org/Review">
                     <div class="testimonial-header">
                         <div class="testimonial-avatar">IM</div>
                         <div class="testimonial-info">
-                            <h4>Isabelle Morel</h4>
+                            <h4 itemprop="author">Isabelle Morel</h4>
                             <div class="testimonial-company">PDG, TechSolutions SA</div>
                         </div>
                     </div>
-                    <div class="testimonial-quote">
+                    <div class="testimonial-quote" itemprop="reviewBody">
                         Face à un contentieux fiscal complexe, l'équipe de La Maison de la Fiscalité a fait preuve d'une
                         expertise remarquable et d'une détermination sans faille. Leur travail nous a évité des
                         sanctions importantes et a sécurisé notre position. Je les recommande sans réserve.
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+                    <div class="testimonial-rating" itemprop="reviewRating" itemscope
+                        itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="4.5">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                        <span class="sr-only">Note : 4.5 étoiles sur 5</span>
                     </div>
                 </div>
 
-                <div class="testimonial-slide" id="slide3">
+                <div class="testimonial-slide" id="slide3" itemscope itemtype="https://schema.org/Review">
                     <div class="testimonial-header">
                         <div class="testimonial-avatar">PR</div>
                         <div class="testimonial-info">
-                            <h4>Patrick OLOUBO</h4>
+                            <h4 itemprop="author">Patrick OLOUBO</h4>
                             <div class="testimonial-company">Entrepreneur indépendant</div>
                         </div>
                     </div>
-                    <div class="testimonial-quote">
+                    <div class="testimonial-quote" itemprop="reviewBody">
                         Pour la transmission de mon entreprise familiale, j'ai trouvé en La Maison de la Fiscalité un
                         partenaire de confiance. Leur accompagnement personnalisé et leur maîtrise technique ont été
                         déterminants pour réussir cette opération dans les meilleures conditions.
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-rating" itemprop="reviewRating" itemscope
+                        itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <span class="sr-only">Note : 5 étoiles sur 5</span>
                     </div>
                 </div>
 
                 <div class="slider-controls">
-                    <div class="slider-btn" id="prevBtn">
-                        <i class="fas fa-chevron-left"></i>
+                    <div class="slider-btn" id="prevBtn" aria-label="Témoignage précédent">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
                     </div>
                     <div class="slider-dots">
-                        <div class="slider-dot active" data-slide="0"></div>
-                        <div class="slider-dot" data-slide="1"></div>
-                        <div class="slider-dot" data-slide="2"></div>
+                        <div class="slider-dot active" data-slide="0" aria-label="Afficher le témoignage 1"></div>
+                        <div class="slider-dot" data-slide="1" aria-label="Afficher le témoignage 2"></div>
+                        <div class="slider-dot" data-slide="2" aria-label="Afficher le témoignage 3"></div>
                     </div>
-                    <div class="slider-btn" id="nextBtn">
-                        <i class="fas fa-chevron-right"></i>
+                    <div class="slider-btn" id="nextBtn" aria-label="Témoignage suivant">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -319,10 +517,13 @@
                 <div class="contact-info">
                     <h3>Nos coordonnées</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> Cococodji, Cotonou</p>
-                        <p><i class="fas fa-phone"></i> 01 96 45 74 86</p>
-                        <p><i class="fas fa-envelope"></i> contact@maison-fiscalite.fr</p>
-                        <p><i class="fas fa-clock"></i> Lundi-Vendredi: 9h-19h<br>Samedi: 10h-14h (sur rendez-vous)</p>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Cococodji, Cotonou, Bénin</p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+2290196457486">01 96 45 74
+                                86</a></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a
+                                href="mailto:contact@maison-fiscalite.fr">contact@maison-fiscalite.fr</a></p>
+                        <p><i class="fas fa-clock" aria-hidden="true"></i> Lundi-Vendredi: 9h-19h<br>Samedi: 10h-14h
+                            (sur rendez-vous)</p>
                     </div>
 
                     <h3>Prendre rendez-vous</h3>
@@ -335,16 +536,9 @@
                     <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" class="web3form">
                         <!-- Clé d'accès Web3Forms (à remplacer) -->
                         <input type="hidden" name="access_key" value="840a8691-8b3e-4cc7-88c2-e1f41e82bbda">
-
-                        <!-- Sujet personnalisé -->
                         <input type="hidden" name="subject" value="Nouveau message - La Maison de la Fiscalité">
-
-                        <!-- Honeypot anti-spam -->
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                        <!-- Désactiver la redirection pour gérer la réponse en AJAX -->
                         <input type="hidden" name="redirect" value="">
-                        <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thanks.html"> -->
 
                         <div class="form-group">
                             <label for="name">Nom complet *</label>
@@ -361,7 +555,6 @@
                             <input type="tel" id="phone" name="phone" placeholder="01 23 45 67 89">
                         </div>
 
-                        <!-- Select option ajouté -->
                         <div class="form-group">
                             <label for="service">Service concerné</label>
                             <select id="service" name="service" class="form-select">
@@ -372,6 +565,7 @@
                                 <option value="accompagnement">Accompagnement juridique et fiscal</option>
                                 <option value="conseil">Conseils aux entreprises</option>
                                 <option value="transmission">Transmission d'entreprise</option>
+                                <option value="textes-fiscaux">Consultation textes fiscaux</option>
                             </select>
                         </div>
 
@@ -381,77 +575,34 @@
                                 placeholder="Décrivez votre situation et vos besoins..."></textarea>
                         </div>
 
-                        <!-- Container pour les messages de résultat -->
                         <div id="form-result" class="form-result" style="display: none;"></div>
 
                         <button type="submit" class="btn-submit" style="
-    width: 100%;
-    padding: 18px 24px;
-    background-color: #C8102E;
-    color: white;
-    border: 2px solid #C8102E;
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-">
+                            width: 100%;
+                            padding: 18px 24px;
+                            background-color: #C8102E;
+                            color: white;
+                            border: 2px solid #C8102E;
+                            border-radius: 8px;
+                            font-family: 'Montserrat', sans-serif;
+                            font-weight: 600;
+                            font-size: 1.1rem;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 10px;
+                            margin-top: 10px;">
                             <span class="btn-text" style="display: flex; align-items: center; gap: 8px;">
-                                <i class="fas fa-paper-plane"></i>
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
                                 Envoyer le message
                             </span>
-
                             <span class="btn-loading" style="display: none; align-items: center; gap: 8px;">
-                                <i class="fas fa-spinner fa-spin"></i>
+                                <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
                                 Envoi en cours...
                             </span>
                         </button>
-
-                        <style>
-                            button.btn-submit:hover {
-                                background-color: #A80D26;
-                                border-color: #A80D26;
-                                transform: translateY(-2px);
-                                box-shadow: 0 6px 15px rgba(200, 16, 46, 0.3);
-                            }
-
-                            button.btn-submit:active {
-                                transform: translateY(0);
-                            }
-
-                            button.btn-submit:focus {
-                                outline: 3px solid rgba(200, 16, 46, 0.3);
-                                outline-offset: 2px;
-                            }
-
-                            button.btn-submit:disabled {
-                                background-color: #CCCCCC;
-                                border-color: #CCCCCC;
-                                cursor: not-allowed;
-                                transform: none;
-                                box-shadow: none;
-                            }
-
-                            .fa-spinner {
-                                animation: spin 1s linear infinite;
-                            }
-
-                            @keyframes spin {
-                                0% {
-                                    transform: rotate(0deg);
-                                }
-
-                                100% {
-                                    transform: rotate(360deg);
-                                }
-                            }
-                        </style>
                     </form>
                 </div>
             </div>
@@ -463,17 +614,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <a href="#" class="footer-logo">
+                    <a href="/" class="footer-logo" aria-label="La Maison de la Fiscalité">
                         <span class="footer-logo-red">La Maison</span>
                         <span class="footer-logo-white">de la Fiscalité</span>
                     </a>
                     <p>Votre partenaire de confiance pour tous vos besoins en fiscalité. Expertise, précision et
                         accompagnement personnalisé depuis 2023.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/maison-fiscalite" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/maison_fiscalite" aria-label="Twitter"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com/maisonfiscalite" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/maisonfiscalite" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
@@ -482,6 +637,7 @@
                     <ul>
                         <li><a href="#accueil">Accueil</a></li>
                         <li><a href="#services">Nos services</a></li>
+                        <li><a href="#textes-fiscaux">Textes Fiscaux</a></li>
                         <li><a href="#apropos">À propos</a></li>
                         <li><a href="#valeurs">Nos valeurs</a></li>
                         <li><a href="#temoignages">Témoignages</a></li>
@@ -491,20 +647,23 @@
 
                 <div class="footer-contact">
                     <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Cococodji<br>Cotonou</p>
-                    <p><i class="fas fa-phone"></i> 01 96 45 74 86</p>
-                    <p><i class="fas fa-envelope"></i> contact@maison-fiscalite.fr</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Cococodji<br>Cotonou, Bénin</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+2290196457486">01 96 45 74 86</a>
+                    </p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a
+                            href="mailto:contact@maison-fiscalite.fr">contact@maison-fiscalite.fr</a></p>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2023 La Maison de la Fiscalité. Tous droits réservés. | <a href="#"
-                        style="color: #aaa;">Mentions légales</a> | <a href="#" style="color: #aaa;">Politique de
-                        confidentialité</a></p>
+                <p>&copy; 2023 La Maison de la Fiscalité. Tous droits réservés. | <a href="/mentions-legales">Mentions
+                        légales</a> | <a href="/politique-confidentialite">Politique de confidentialité</a></p>
+                <p><small>Ce site n'est pas affilié à l'administration fiscale béninoise. Les informations fournies sont
+                        à titre indicatif.</small></p>
             </div>
         </div>
     </footer>
+    <script src="assets/js/script.js"></script>
 </body>
-<script src="assets/js/script.js"></script>
 
 </html>
