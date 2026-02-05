@@ -534,19 +534,25 @@
                 <div class="contact-form">
                     <h3>Formulaire de contact</h3>
                     <form action="https://formsubmit.co/gilchristtognisse@gmail.com" method="POST">
+
+                        <!-- Sujet de l'email -->
+                        <input type="hidden" name="_subject" value="Nouveau message - La Maison de la Fiscalité">
+                        
                         <!-- Mettre les données sous forme de tableau dans l'email -->
                         <input type="hidden" name="_template" value="table">
+
+                        <!-- Message d'introduction-->
+                         <input type="hidden" name="_autoresponse" value="Vous avez reçu un nouveau message via le formulaire de contact du site La Maison de la Fiscalité. Détails du message :">
+
 
                         <!-- Réponse automatique en français -->
                         <input type="hidden" name="_autoresponse"
                             value="Bonjour, nous avons bien reçu votre message. Notre équipe vous répondra dans les plus brefs délais. Merci pour votre confiance.">
 
-                        <!-- Anti-bot -->
-                        <input type="checkbox" name="botcheck" style="display:none">
 
                         <!-- Redirection après envoi -->
                         <input type="hidden" name="_next" value="https://lamaisondelafiscalite.onrender.com/merci.html">
-                        
+
                         <div class="form-group">
                             <label for="name">Nom complet *</label>
                             <input type="text" id="name" name="name" required placeholder="Votre nom et prénom">
