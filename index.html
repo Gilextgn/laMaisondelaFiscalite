@@ -533,18 +533,20 @@
 
                 <div class="contact-form">
                     <h3>Formulaire de contact</h3>
-                    <!-- Clé d'accès Web3Forms (à remplacer) 
-                        <input type="hidden" name="access_key" value="840a8691-8b3e-4cc7-88c2-e1f41e82bbda" id="contactForm" class="web3form"> 
-                        <input type="hidden" name="subject" value="Nouveau message - La Maison de la Fiscalité">
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                        <input type="hidden" name="redirect" value=""> -->
-                    
-                        <form action="https://formsubmit.co/gilchristtognisse@gmail.com" method="POST">
-                            
-                        <input type="hidden" name="_subject" value="Nouveau message - La Maison de la Fiscalité">
-                        <input type="hidden" name="_next" value="https://lamaisondelafiscalite.onrender.com/merci.html">
-                        <input type="hidden" name="_autoresponse" value="Bonjour, merci de nous avoir contactés ! Nous avons bien reçu votre message et nous vous répondrons rapidement." />
+                    <form action="https://formsubmit.co/gilchristtognisse@gmail.com" method="POST">
+                        <!-- Mettre les données sous forme de tableau dans l'email -->
+                        <input type="hidden" name="_template" value="table">
 
+                        <!-- Réponse automatique en français -->
+                        <input type="hidden" name="_autoresponse"
+                            value="Bonjour, nous avons bien reçu votre message. Notre équipe vous répondra dans les plus brefs délais. Merci pour votre confiance.">
+
+                        <!-- Anti-bot -->
+                        <input type="checkbox" name="botcheck" style="display:none">
+
+                        <!-- Redirection après envoi -->
+                        <input type="hidden" name="_next" value="https://lamaisondelafiscalite.onrender.com/merci.html">
+                        
                         <div class="form-group">
                             <label for="name">Nom complet *</label>
                             <input type="text" id="name" name="name" required placeholder="Votre nom et prénom">
@@ -557,7 +559,7 @@
 
                         <div class="form-group">
                             <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone" name="phone" placeholder= "Ex : +229 97 12 34 56">
+                            <input type="tel" id="phone" name="phone" placeholder="Ex : +229 97 12 34 56">
                         </div>
 
                         <div class="form-group">
