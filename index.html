@@ -533,12 +533,17 @@
 
                 <div class="contact-form">
                     <h3>Formulaire de contact</h3>
-                    <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" class="web3form">
-                        <!-- Clé d'accès Web3Forms (à remplacer) -->
-                        <input type="hidden" name="access_key" value="840a8691-8b3e-4cc7-88c2-e1f41e82bbda">
+                    <!-- Clé d'accès Web3Forms (à remplacer) 
+                        <input type="hidden" name="access_key" value="840a8691-8b3e-4cc7-88c2-e1f41e82bbda" id="contactForm" class="web3form"> 
                         <input type="hidden" name="subject" value="Nouveau message - La Maison de la Fiscalité">
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                        <input type="hidden" name="redirect" value="">
+                        <input type="hidden" name="redirect" value=""> -->
+                    
+                        <form action="https://formsubmit.co/gilchristtognisse@gmail.com" method="POST">
+                            
+                        <input type="hidden" name="_subject" value="Nouveau message - La Maison de la Fiscalité">
+                        <input type="hidden" name="_next" value="https://lamaisondelafiscalite.onrender.com/merci.html">
+                        <input type="hidden" name="_autoresponse" value="Bonjour, merci de nous avoir contactés ! Nous avons bien reçu votre message et nous vous répondrons rapidement." />
 
                         <div class="form-group">
                             <label for="name">Nom complet *</label>
@@ -552,7 +557,7 @@
 
                         <div class="form-group">
                             <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="01 23 45 67 89">
+                            <input type="tel" id="phone" name="phone" placeholder= "Ex : +229 97 12 34 56">
                         </div>
 
                         <div class="form-group">
